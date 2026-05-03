@@ -99,7 +99,7 @@ function HeroCard({ product }: { product: RankingProduct }) {
         <div className="flex items-center justify-center gap-4 text-sm text-gray-500 mb-3">
           <span className="flex items-center gap-1">
             <span className="text-green-500 font-bold">✅</span>
-            編集部が実際に購入・確認済み
+            編集部が徹底リサーチして厳選
           </span>
           <span className="hidden sm:flex items-center gap-1">
             <span className="text-amber-500">🔥</span>

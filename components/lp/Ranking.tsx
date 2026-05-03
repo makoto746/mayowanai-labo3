@@ -24,7 +24,7 @@ export default function Ranking() {
             人気ランキング
           </h2>
           <p className="text-gray-500 text-sm sm:text-base">
-            編集部が実際に購入・検証した商品だけを掲載しています
+            数千件のレビューとデータを徹底リサーチして厳選した商品を掲載しています
           </p>
         </div>
 

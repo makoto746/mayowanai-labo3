@@ -7,7 +7,7 @@ import RankingContent from "@/components/ranking/RankingContent";
 export const metadata: Metadata = {
   title: "人気ランキング | 迷わない買い物ラボ",
   description:
-    "編集部が実際に購入・使用したAmazon商品だけを掲載。カテゴリ別の人気ランキングで「これで決まり！」が見つかります。",
+    "数千件のレビューとデータを徹底リサーチして厳選したAmazon商品を掲載。カテゴリ別の人気ランキングで「これで決まり！」が見つかります。",
 };
 
 export default function RankingPage() {
@@ -32,7 +32,7 @@ export default function RankingPage() {
               人気ランキング
             </h1>
             <p className="text-gray-300 text-sm sm:text-base leading-relaxed max-w-xl">
-              編集部が実際に購入・使用した商品だけを掲載。カテゴリで絞り込んで、あなたにぴったりの一品を見つけてください。
+              数千件のレビューとデータを徹底リサーチして厳選した商品を掲載。カテゴリで絞り込んで、あなたにぴったりの一品を見つけてください。
             </p>
 
             {/* 更新日 */}
@@ -45,7 +45,7 @@ export default function RankingPage() {
         {/* トラストバー */}
         <div className="bg-amber-50 border-b border-amber-100 py-2.5 px-4">
           <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-6 gap-y-1 text-xs text-amber-800 font-bold">
-            <span>✅ 全商品を編集部が実際に購入・使用</span>
+            <span>✅ 全商品を編集部が徹底リサーチして厳選</span>
             <span>📦 Amazonで今すぐ購入可能</span>
             <span>🔄 毎週ランキングを更新中</span>
             <span>💬 正直な長所・短所を掲載</span>
