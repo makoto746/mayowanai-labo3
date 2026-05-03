@@ -2,7 +2,7 @@
 
 /* ブランドカラーの追加 */
 @theme {
-  --font-sans: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif,
+  --font-sans: var(--font-noto), "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji";
 
   --color-navy-50: oklch(97% 0.01 240);

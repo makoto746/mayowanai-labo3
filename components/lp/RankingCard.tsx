@@ -125,15 +125,28 @@ function HeroCard({ product }: { product: RankingProduct }) {
 
 // 2位以降の通常カード
 function NormalCard({ product }: { product: RankingProduct }) {
-  const rankLabel = ["🥈 2位", "🥉 3位"][product.rank - 2] ?? `${product.rank}位`;
-  const rankBg = product.rank === 2 ? "bg-slate-400" : product.rank === 3 ? "bg-amber-700" : "bg-gray-200";
-  const rankText = product.rank <= 3 ? "text-white" : "text-gray-500";
+  const rankLabel =
+    product.rank === 2 ? "🥈 2位" :
+    product.rank === 3 ? "🥉 3位" :
+    `${product.rank}位`;
+
+  const rankBg =
+    product.rank === 2 ? "bg-slate-400" :
+    product.rank === 3 ? "bg-amber-700" :
+    product.rank <= 6 ? "bg-navy-600" :
+    "bg-gray-400";
+
+  const accentBorder =
+    product.rank === 2 ? "border-l-slate-400" :
+    product.rank === 3 ? "border-l-amber-700" :
+    product.rank <= 6 ? "border-l-navy-600" :
+    "border-l-gray-300";
 
   return (
-    <article className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-200">
+    <article className={`bg-white rounded-2xl border border-gray-100 border-l-4 ${accentBorder} shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-200`}>
       {/* ヘッダー行 */}
       <div className="flex items-center gap-2 px-4 pt-4 pb-2">
-        <span className={`inline-flex items-center text-xs font-black px-3 py-1 rounded-full ${rankBg} ${rankText}`}>
+        <span className={`inline-flex items-center text-xs font-black px-3 py-1 rounded-full text-white ${rankBg}`}>
           {rankLabel}
         </span>
         {product.saleLabel && (
@@ -179,11 +192,12 @@ function NormalCard({ product }: { product: RankingProduct }) {
             {product.verdict}
           </p>
 
-          <ul className="flex flex-col gap-1">
+          {/* よかった点（HeroCardと統一したグリーンピル） */}
+          <ul className="grid grid-cols-1 sm:grid-cols-3 gap-1.5">
             {product.pros.map((pro, i) => (
-              <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
-                <span className="text-green-500 font-bold flex-shrink-0 mt-0.5">✓</span>
-                <span>{pro}</span>
+              <li key={i} className="flex items-start gap-1.5 bg-green-50 rounded-lg px-2 py-1.5">
+                <span className="text-green-500 font-black flex-shrink-0 text-sm">✓</span>
+                <span className="text-xs leading-relaxed text-gray-700">{pro}</span>
               </li>
             ))}
           </ul>

@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
+import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
+import ScrollToTop from "@/components/ScrollToTop";
+
+const notoSansJP = Noto_Sans_JP({
+  subsets: ["latin"],
+  variable: "--font-noto",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "迷わない買い物ラボ | Amazon商品レビュー＆ランキング",
@@ -19,8 +27,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ja">
-      <body>{children}</body>
+    <html lang="ja" className={notoSansJP.variable}>
+      <body>
+        {children}
+        <ScrollToTop />
+      </body>
     </html>
   );
 }

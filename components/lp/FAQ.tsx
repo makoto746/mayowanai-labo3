@@ -16,19 +16,29 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
         <span className="font-bold text-gray-800 pr-4 text-sm sm:text-base">
           Q. {question}
         </span>
-        <span className="flex-shrink-0 text-amber-500 text-lg sm:text-xl font-bold">
-          {open ? "−" : "+"}
+        <span
+          className={`flex-shrink-0 text-amber-500 text-lg sm:text-xl font-bold transition-transform duration-200 ${
+            open ? "rotate-45" : ""
+          }`}
+        >
+          +
         </span>
       </button>
-      {open && (
-        <div className="px-4 sm:px-5 pb-4 sm:pb-5 bg-white">
-          <div className="border-t border-gray-100 pt-3 sm:pt-4">
-            <p className="text-gray-600 leading-relaxed text-sm">
-              A. {answer}
-            </p>
+      <div
+        className={`grid transition-all duration-300 ease-in-out ${
+          open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <div className="px-4 sm:px-5 pb-4 sm:pb-5 bg-white">
+            <div className="border-t border-gray-100 pt-3 sm:pt-4">
+              <p className="text-gray-600 leading-relaxed text-sm">
+                A. {answer}
+              </p>
+            </div>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }
