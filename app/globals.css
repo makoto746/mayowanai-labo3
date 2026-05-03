@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+/* ブランドカラーの追加 */
+@theme {
+  --font-sans: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji";
+
+  --color-navy-50: oklch(97% 0.01 240);
+  --color-navy-100: oklch(93% 0.025 240);
+  --color-navy-600: oklch(42% 0.09 240);
+  --color-navy-700: oklch(34% 0.1 240);
+  --color-navy-800: oklch(27% 0.09 240);
+  --color-navy-900: oklch(20% 0.07 240);
+}
+
+/* スムーズスクロール */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
