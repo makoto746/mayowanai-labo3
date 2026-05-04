@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#f9fafb"/>
+  <rect x="1" y="1" width="398" height="398" fill="none" stroke="#e5e7eb" stroke-width="2" rx="4"/>
+  <!-- Camera body -->
+  <rect x="140" y="155" width="120" height="90" rx="10" fill="none" stroke="#d1d5db" stroke-width="5"/>
+  <!-- Lens outer -->
+  <circle cx="200" cy="195" r="28" fill="none" stroke="#d1d5db" stroke-width="5"/>
+  <!-- Lens inner -->
+  <circle cx="200" cy="195" r="14" fill="#e5e7eb"/>
+  <!-- Flash bump -->
+  <rect x="172" y="143" width="36" height="16" rx="5" fill="none" stroke="#d1d5db" stroke-width="4"/>
+  <!-- Shutter button -->
+  <circle cx="240" cy="163" r="6" fill="#e5e7eb"/>
+  <!-- Label -->
+  <text
+    x="200"
+    y="285"
+    text-anchor="middle"
+    font-size="16"
+    fill="#9ca3af"
+    font-family="-apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Noto Sans JP', sans-serif"
+    letter-spacing="1"
+  >画像準備中</text>
+</svg>

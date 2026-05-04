@@ -23,17 +23,14 @@ function ProductImage({
   product: RankingProduct;
   className?: string;
 }) {
-  if (product.image) {
-    return (
-      <img
-        src={product.image}
-        alt={product.name}
-        className={`w-full h-full object-cover ${className ?? ""}`}
-      />
-    );
-  }
+  const src = product.image || "/images/no-image.svg";
+  const isPlaceholder = !product.image;
   return (
-    <span className="text-6xl md:text-7xl">{product.productIcon}</span>
+    <img
+      src={src}
+      alt={isPlaceholder ? "商品画像準備中" : product.name}
+      className={`w-full h-full ${isPlaceholder ? "object-contain p-4 opacity-40" : "object-cover"} ${className ?? ""}`}
+    />
   );
 }
 
