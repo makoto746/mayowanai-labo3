@@ -87,21 +87,24 @@ export type RankingProduct = {
   category: string;
   categoryLabel: string;
   categoryBg: string;
-  productIcon: string;
+  productIcon: string;      // 画像なし時のemoji代替
+  image?: string;           // Amazon商品画像URL（空の場合はemoji表示）
   name: string;
   maker: string;
   rating: number;
   reviewCount: number;
   priceRange: string;
+  priceNote?: string;       // 「※価格は変動します」など
   verdict: string;
   pros: string[];
-  targetUser: string;       // 「こんな人におすすめ」
-  monthlyPurchases: string; // 「今月X人が購入」の数字部分
+  targetUser: string;
   amazonUrl: string;
   rakutenUrl?: string;
   rakutenPriceRange?: string;
   badge?: string;
-  saleLabel?: string;       // 「⚡ セール中」など。不要なら削除でOK
+  saleLabel?: string;
+  // 旧フィールド（後方互換・UI非表示）
+  monthlyPurchases?: string;
 };
 
 export const RANKING_CATEGORIES = [
@@ -196,24 +199,26 @@ export const RANKING_PRODUCTS: RankingProduct[] = [
     categoryLabel: "キッチン",
     categoryBg: "bg-orange-50",
     productIcon: "☕",
-    name: "全自動コーヒーメーカー Brew Master",
-    maker: "CaféPro",
-    rating: 4.6,
-    reviewCount: 2478,
-    priceRange: "¥15,000〜22,000",
-    verdict: "豆から挽きたてを1杯分ずつ。カフェ品質のコーヒーが毎朝ボタン1つで飲めます。タイマー予約機能も便利。",
+    // ↓ Amazonの商品ページから画像URLを取得して入力してください
+    image: "",
+    name: "アイリスオーヤマ 全自動コーヒーメーカー CMK-720",
+    maker: "アイリスオーヤマ",
+    rating: 4.1,
+    reviewCount: 623,
+    priceRange: "¥8,000〜¥9,500",
+    priceNote: "※価格は変動します",
+    verdict: "豆から全自動で本格コーヒーを抽出できるエントリーモデル。タイマー機能で起床時に淹れたてが楽しめ、ミルやサーバーが取り外して洗えるため毎日のお手入れがストレスなく続けられると好評です。",
     pros: [
-      "豆から全自動でカフェ品質の味",
-      "タイマー予約で起床時に淹れたてが飲める",
-      "洗いやすい設計でメンテが楽",
+      "豆から全自動で本格コーヒーを抽出",
+      "タイマー機能で起床時に淹れたてが楽しめる",
+      "ミル・サーバーが取り外せて洗いやすい",
     ],
-    targetUser: "毎朝コーヒーを飲む方・カフェ代を節約したい方",
-    monthlyPurchases: "534人",
+    targetUser: "忙しい朝でも美味しいコーヒーを飲みたい方",
+    // ↓ AmazonアフィリエイトURLを入力してください
     amazonUrl: "#",
     rakutenUrl: "#",
-    rakutenPriceRange: "¥16,000〜23,000",
-    badge: "コスパ最強",
-    saleLabel: "⚡ セール中",
+    rakutenPriceRange: "¥8,200〜¥9,800",
+    badge: "実在商品テスト",
   },
   {
     id: 5,

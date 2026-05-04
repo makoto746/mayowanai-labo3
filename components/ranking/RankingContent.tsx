@@ -86,8 +86,11 @@ export default function RankingContent() {
       {showFloatCta && topProduct && (
         <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white border-t border-gray-200 shadow-xl px-4 py-3">
           <div className="flex items-center gap-3">
-            <div className={`${topProduct.categoryBg} rounded-xl w-11 h-11 flex items-center justify-center flex-shrink-0 text-2xl`}>
-              {topProduct.productIcon}
+            <div className={`${topProduct.image ? "bg-white" : topProduct.categoryBg} rounded-xl w-11 h-11 flex items-center justify-center flex-shrink-0 overflow-hidden`}>
+              {topProduct.image
+                ? <img src={topProduct.image} alt={topProduct.name} className="w-full h-full object-cover" />
+                : <span className="text-2xl">{topProduct.productIcon}</span>
+              }
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-xs text-amber-500 font-bold">🥇 総合1位</p>
@@ -96,7 +99,7 @@ export default function RankingContent() {
             <a
               href={topProduct.amazonUrl}
               target="_blank"
-              rel="noopener noreferrer sponsored"
+              rel="nofollow sponsored noopener"
               className="flex-shrink-0 bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs py-2.5 px-4 rounded-full shadow"
             >
               Amazonで見る →

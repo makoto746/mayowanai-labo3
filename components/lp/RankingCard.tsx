@@ -16,6 +16,27 @@ function StarRating({ rating }: { rating: number }) {
   );
 }
 
+function ProductImage({
+  product,
+  className,
+}: {
+  product: RankingProduct;
+  className?: string;
+}) {
+  if (product.image) {
+    return (
+      <img
+        src={product.image}
+        alt={product.name}
+        className={`w-full h-full object-cover ${className ?? ""}`}
+      />
+    );
+  }
+  return (
+    <span className="text-6xl md:text-7xl">{product.productIcon}</span>
+  );
+}
+
 // 1位のみ使う特大ヒーローカード
 function HeroCard({ product }: { product: RankingProduct }) {
   return (
@@ -28,15 +49,16 @@ function HeroCard({ product }: { product: RankingProduct }) {
       </div>
 
       <div className="flex flex-col md:flex-row">
-        {/* 画像エリア */}
-        <div className={`${product.categoryBg} flex flex-col items-center justify-center py-10 md:py-0 md:w-52 flex-shrink-0 relative`}>
-          <span className="text-7xl md:text-6xl">{product.productIcon}</span>
-          <div className="absolute bottom-3 left-0 right-0 flex justify-center">
-            <span className="text-xs font-black bg-amber-500 text-white px-3 py-1 rounded-full shadow">
-              今月 {product.monthlyPurchases} が購入
-            </span>
-          </div>
-        </div>
+        {/* 画像エリア（クリックでAmazonへ） */}
+        <a
+          href={product.amazonUrl}
+          target="_blank"
+          rel="nofollow sponsored noopener"
+          aria-label={`${product.name}をAmazonで確認する`}
+          className={`${product.image ? "bg-white" : product.categoryBg} flex items-center justify-center h-52 md:h-auto md:w-52 flex-shrink-0 overflow-hidden`}
+        >
+          <ProductImage product={product} />
+        </a>
 
         {/* 情報エリア */}
         <div className="flex flex-col gap-3 p-5 flex-1">
@@ -67,8 +89,13 @@ function HeroCard({ product }: { product: RankingProduct }) {
           {/* 評価・価格 */}
           <div className="flex items-center gap-3 flex-wrap">
             <StarRating rating={product.rating} />
-            <span className="text-xs text-gray-400">({product.reviewCount.toLocaleString()}件)</span>
-            <span className="ml-auto text-sm font-black text-gray-800">{product.priceRange}</span>
+            <span className="text-xs text-gray-400">({product.reviewCount.toLocaleString()}件以上)</span>
+            <div className="ml-auto text-right">
+              <span className="text-sm font-black text-gray-800">{product.priceRange}</span>
+              {product.priceNote && (
+                <p className="text-xs text-gray-400">{product.priceNote}</p>
+              )}
+            </div>
           </div>
 
           {/* 編集部コメント */}
@@ -96,21 +123,15 @@ function HeroCard({ product }: { product: RankingProduct }) {
 
       {/* CTAエリア */}
       <div className="bg-gray-50 px-5 py-4 border-t border-gray-100">
-        <div className="flex items-center justify-center gap-4 text-sm text-gray-500 mb-3">
-          <span className="flex items-center gap-1">
-            <span className="text-green-500 font-bold">✅</span>
-            編集部が徹底リサーチして厳選
-          </span>
-          <span className="hidden sm:flex items-center gap-1">
-            <span className="text-amber-500">🔥</span>
-            今月 {product.monthlyPurchases} が購入
-          </span>
-        </div>
+        <p className="text-center text-xs text-gray-500 flex items-center justify-center gap-1 mb-3">
+          <span className="text-green-500 font-bold">✅</span>
+          実際に使用・口コミをもとに選定
+        </p>
         <div className="flex flex-col sm:flex-row gap-2">
           <a
             href={product.amazonUrl}
             target="_blank"
-            rel="noopener noreferrer sponsored"
+            rel="nofollow sponsored noopener"
             className="flex items-center justify-center gap-2 flex-1 bg-amber-500 hover:bg-amber-600 active:bg-amber-700 text-white font-black py-4 rounded-xl transition-colors duration-150 text-base shadow-md shadow-amber-200"
           >
             <CartIcon />
@@ -120,7 +141,7 @@ function HeroCard({ product }: { product: RankingProduct }) {
             <a
               href={product.rakutenUrl}
               target="_blank"
-              rel="noopener noreferrer sponsored"
+              rel="nofollow sponsored noopener"
               className="flex items-center justify-center gap-2 flex-1 bg-red-500 hover:bg-red-600 active:bg-red-700 text-white font-black py-4 rounded-xl transition-colors duration-150 text-base shadow-md shadow-red-200"
             >
               楽天で見る →
@@ -181,15 +202,16 @@ function NormalCard({ product }: { product: RankingProduct }) {
       </div>
 
       <div className="flex flex-col sm:flex-row">
-        {/* 画像エリア */}
-        <div className={`${product.categoryBg} flex flex-col items-center justify-center py-7 sm:py-0 sm:w-36 sm:min-h-[170px] flex-shrink-0 relative`}>
-          <span className="text-5xl">{product.productIcon}</span>
-          <div className="absolute bottom-2 left-0 right-0 flex justify-center">
-            <span className="text-xs font-bold bg-white/90 text-gray-600 px-2 py-0.5 rounded-full shadow-sm">
-              {product.monthlyPurchases}/月
-            </span>
-          </div>
-        </div>
+        {/* 画像エリア（クリックでAmazonへ） */}
+        <a
+          href={product.amazonUrl}
+          target="_blank"
+          rel="nofollow sponsored noopener"
+          aria-label={`${product.name}をAmazonで確認する`}
+          className={`${product.image ? "bg-white" : product.categoryBg} flex items-center justify-center h-40 sm:h-auto sm:w-36 flex-shrink-0 overflow-hidden`}
+        >
+          <ProductImage product={product} className="sm:w-36 sm:min-h-[170px]" />
+        </a>
 
         {/* 情報エリア */}
         <div className="flex flex-col gap-2.5 p-4 flex-1">
@@ -203,15 +225,19 @@ function NormalCard({ product }: { product: RankingProduct }) {
 
           <div className="flex items-center gap-2 flex-wrap">
             <StarRating rating={product.rating} />
-            <span className="text-xs text-gray-400">({product.reviewCount.toLocaleString()}件)</span>
-            <span className="ml-auto text-sm font-bold text-gray-700">{product.priceRange}</span>
+            <span className="text-xs text-gray-400">({product.reviewCount.toLocaleString()}件以上)</span>
+            <div className="ml-auto text-right">
+              <span className="text-sm font-bold text-gray-700">{product.priceRange}</span>
+              {product.priceNote && (
+                <p className="text-xs text-gray-400">{product.priceNote}</p>
+              )}
+            </div>
           </div>
 
           <p className="text-sm text-gray-600 leading-relaxed bg-gray-50 rounded-xl p-3 border-l-4 border-amber-400">
             {product.verdict}
           </p>
 
-          {/* よかった点（HeroCardと統一したグリーンピル） */}
           <ul className="grid grid-cols-1 sm:grid-cols-3 gap-1.5">
             {product.pros.map((pro, i) => (
               <li key={i} className="flex items-start gap-1.5 bg-green-50 rounded-lg px-2 py-1.5">
@@ -230,17 +256,15 @@ function NormalCard({ product }: { product: RankingProduct }) {
 
       {/* CTAエリア */}
       <div className="px-4 pb-4 pt-3 border-t border-gray-50">
-        <div className="flex items-center justify-center gap-1.5 text-xs text-gray-400 mb-2.5">
+        <p className="text-center text-xs text-gray-400 flex items-center justify-center gap-1 mb-2.5">
           <span className="text-green-500">✅</span>
-          編集部確認済み
-          <span className="mx-1">・</span>
-          <span className="text-amber-500 font-bold">今月 {product.monthlyPurchases} が購入</span>
-        </div>
+          実際に使用・口コミをもとに選定
+        </p>
         <div className="flex flex-col sm:flex-row gap-2">
           <a
             href={product.amazonUrl}
             target="_blank"
-            rel="noopener noreferrer sponsored"
+            rel="nofollow sponsored noopener"
             className="flex items-center justify-center gap-2 flex-1 bg-amber-500 hover:bg-amber-600 active:bg-amber-700 text-white font-bold py-3.5 rounded-xl transition-colors duration-150 text-sm sm:text-base"
           >
             <CartIcon />
@@ -250,7 +274,7 @@ function NormalCard({ product }: { product: RankingProduct }) {
             <a
               href={product.rakutenUrl}
               target="_blank"
-              rel="noopener noreferrer sponsored"
+              rel="nofollow sponsored noopener"
               className="flex items-center justify-center gap-2 flex-1 bg-red-500 hover:bg-red-600 active:bg-red-700 text-white font-bold py-3.5 rounded-xl transition-colors duration-150 text-sm sm:text-base"
             >
               楽天で見る →
