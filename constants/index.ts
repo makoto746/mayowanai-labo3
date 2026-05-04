@@ -161,6 +161,8 @@ export const RANKING_PRODUCTS: RankingProduct[] = [
     targetUser: "吸引力にこだわりたい方・ペットを飼っている方",
     monthlyPurchases: "892人",
     amazonUrl: "#",
+    rakutenUrl: "#",
+    rakutenPriceRange: "¥57,000〜77,000",
     badge: "売れ筋No.1",
   },
   {
@@ -184,6 +186,8 @@ export const RANKING_PRODUCTS: RankingProduct[] = [
     targetUser: "通勤・テレワーク中に集中したい方",
     monthlyPurchases: "2,103人",
     amazonUrl: "#",
+    rakutenUrl: "#",
+    rakutenPriceRange: "¥29,000〜39,000",
   },
   {
     id: 4,
@@ -206,6 +210,8 @@ export const RANKING_PRODUCTS: RankingProduct[] = [
     targetUser: "毎朝コーヒーを飲む方・カフェ代を節約したい方",
     monthlyPurchases: "534人",
     amazonUrl: "#",
+    rakutenUrl: "#",
+    rakutenPriceRange: "¥16,000〜23,000",
     badge: "コスパ最強",
     saleLabel: "⚡ セール中",
   },
@@ -230,6 +236,8 @@ export const RANKING_PRODUCTS: RankingProduct[] = [
     targetUser: "歯茎の健康が気になる方・歯科代を減らしたい方",
     monthlyPurchases: "1,089人",
     amazonUrl: "#",
+    rakutenUrl: "#",
+    rakutenPriceRange: "¥7,500〜12,500",
   },
   {
     id: 6,
@@ -252,6 +260,8 @@ export const RANKING_PRODUCTS: RankingProduct[] = [
     targetUser: "家族の食事の安全にこだわる方",
     monthlyPurchases: "763人",
     amazonUrl: "#",
+    rakutenUrl: "#",
+    rakutenPriceRange: "¥4,800〜7,500",
   },
   {
     id: 7,
@@ -274,6 +284,8 @@ export const RANKING_PRODUCTS: RankingProduct[] = [
     targetUser: "プロテインを初めて買う方・続けやすさ重視の方",
     monthlyPurchases: "3,412人",
     amazonUrl: "#",
+    rakutenUrl: "#",
+    rakutenPriceRange: "¥4,800〜7,500",
     badge: "定番人気",
   },
   {
@@ -297,6 +309,8 @@ export const RANKING_PRODUCTS: RankingProduct[] = [
     targetUser: "忙しくて食事が偏りがちな方",
     monthlyPurchases: "421人",
     amazonUrl: "#",
+    rakutenUrl: "#",
+    rakutenPriceRange: "¥2,600〜3,800",
   },
   {
     id: 9,
@@ -319,6 +333,8 @@ export const RANKING_PRODUCTS: RankingProduct[] = [
     targetUser: "洗剤代を節約したい方・肌が敏感な家族がいる方",
     monthlyPurchases: "2,891人",
     amazonUrl: "#",
+    rakutenUrl: "#",
+    rakutenPriceRange: "¥1,100〜1,900",
   },
   {
     id: 10,
@@ -341,6 +357,8 @@ export const RANKING_PRODUCTS: RankingProduct[] = [
     targetUser: "デスク周りのケーブルをすっきりさせたい方",
     monthlyPurchases: "1,523人",
     amazonUrl: "#",
+    rakutenUrl: "#",
+    rakutenPriceRange: "¥3,800〜5,800",
     badge: "売れ筋No.1",
   },
   {
@@ -364,6 +382,8 @@ export const RANKING_PRODUCTS: RankingProduct[] = [
     targetUser: "キッチンの収納スペースを増やしたい方",
     monthlyPurchases: "989人",
     amazonUrl: "#",
+    rakutenUrl: "#",
+    rakutenPriceRange: "¥2,900〜4,400",
   },
   {
     id: 12,
@@ -386,6 +406,8 @@ export const RANKING_PRODUCTS: RankingProduct[] = [
     targetUser: "シミ・くすみが気になり始めた30〜40代の方",
     monthlyPurchases: "734人",
     amazonUrl: "#",
+    rakutenUrl: "#",
+    rakutenPriceRange: "¥4,000〜5,800",
     badge: "皮膚科医監修",
   },
   {
@@ -409,6 +431,8 @@ export const RANKING_PRODUCTS: RankingProduct[] = [
     targetUser: "在宅ワーク・オフィス勤務でデスクに飲み物を置く方",
     monthlyPurchases: "2,204人",
     amazonUrl: "#",
+    rakutenUrl: "#",
+    rakutenPriceRange: "¥2,700〜4,200",
   },
   {
     id: 14,
@@ -431,6 +455,8 @@ export const RANKING_PRODUCTS: RankingProduct[] = [
     targetUser: "食の安全にこだわる方・料理の質を上げたい方",
     monthlyPurchases: "457人",
     amazonUrl: "#",
+    rakutenUrl: "#",
+    rakutenPriceRange: "¥1,900〜3,000",
     badge: "有機JAS認定",
   },
   {
@@ -454,6 +480,8 @@ export const RANKING_PRODUCTS: RankingProduct[] = [
     targetUser: "ダイエット中の方・植物性プロテインを探している方",
     monthlyPurchases: "671人",
     amazonUrl: "#",
+    rakutenUrl: "#",
+    rakutenPriceRange: "¥2,400〜3,400",
     badge: "植物性100%",
   },
   {
@@ -477,6 +505,8 @@ export const RANKING_PRODUCTS: RankingProduct[] = [
     targetUser: "スマートホームを手軽に始めたい方",
     monthlyPurchases: "1,102人",
     amazonUrl: "#",
+    rakutenUrl: "#",
+    rakutenPriceRange: "¥3,400〜5,000",
   },
   {
     id: 17,
@@ -499,6 +529,8 @@ export const RANKING_PRODUCTS: RankingProduct[] = [
     targetUser: "浴室の衛生・お手入れを楽にしたい方",
     monthlyPurchases: "1,834人",
     amazonUrl: "#",
+    rakutenUrl: "#",
+    rakutenPriceRange: "¥2,200〜3,700",
     badge: "洗濯不要",
   },
   {
@@ -522,6 +554,8 @@ export const RANKING_PRODUCTS: RankingProduct[] = [
     targetUser: "運動時間が取れないが体型が気になる方",
     monthlyPurchases: "589人",
     amazonUrl: "#",
+    rakutenUrl: "#",
+    rakutenPriceRange: "¥5,800〜8,500",
   },
   {
     id: 19,
@@ -544,6 +578,8 @@ export const RANKING_PRODUCTS: RankingProduct[] = [
     targetUser: "作り置き・お弁当を習慣にしたい方",
     monthlyPurchases: "1,347人",
     amazonUrl: "#",
+    rakutenUrl: "#",
+    rakutenPriceRange: "¥3,700〜5,200",
     badge: "食洗機対応",
   },
   {
@@ -567,6 +603,8 @@ export const RANKING_PRODUCTS: RankingProduct[] = [
     targetUser: "抹茶ラテ・お菓子作りを楽しみたい方",
     monthlyPurchases: "812人",
     amazonUrl: "#",
+    rakutenUrl: "#",
+    rakutenPriceRange: "¥1,600〜2,600",
     badge: "国産有機",
   },
   {
@@ -590,6 +628,8 @@ export const RANKING_PRODUCTS: RankingProduct[] = [
     targetUser: "テレワーク・オンライン会議の多い方",
     monthlyPurchases: "743人",
     amazonUrl: "#",
+    rakutenUrl: "#",
+    rakutenPriceRange: "¥8,500〜12,500",
   },
   {
     id: 22,
@@ -612,6 +652,8 @@ export const RANKING_PRODUCTS: RankingProduct[] = [
     targetUser: "植物を育てたいが水やりを忘れてしまう方",
     monthlyPurchases: "528人",
     amazonUrl: "#",
+    rakutenUrl: "#",
+    rakutenPriceRange: "¥2,900〜4,400",
   },
   {
     id: 23,
@@ -634,6 +676,8 @@ export const RANKING_PRODUCTS: RankingProduct[] = [
     targetUser: "デスクワークで肩こり・首こりに悩む方",
     monthlyPurchases: "2,156人",
     amazonUrl: "#",
+    rakutenUrl: "#",
+    rakutenPriceRange: "¥6,300〜9,500",
     badge: "ヒーター付き",
     saleLabel: "⚡ セール中",
   },
@@ -658,6 +702,8 @@ export const RANKING_PRODUCTS: RankingProduct[] = [
     targetUser: "毎日料理をする方・切れ味にこだわりたい方",
     monthlyPurchases: "891人",
     amazonUrl: "#",
+    rakutenUrl: "#",
+    rakutenPriceRange: "¥3,200〜5,200",
   },
   {
     id: 25,
@@ -680,6 +726,8 @@ export const RANKING_PRODUCTS: RankingProduct[] = [
     targetUser: "糖質制限中の方・集中力を高めたいビジネスパーソン",
     monthlyPurchases: "1,203人",
     amazonUrl: "#",
+    rakutenUrl: "#",
+    rakutenPriceRange: "¥2,100〜3,100",
     badge: "中鎖脂肪酸100%",
   },
 ];
