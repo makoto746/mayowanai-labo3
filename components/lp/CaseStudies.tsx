@@ -14,17 +14,17 @@ export default function CaseStudies() {
           </h2>
         </div>
 
-        {/* 数字 */}
-        <div className="grid grid-cols-3 gap-3 sm:gap-6 mb-12 sm:mb-16">
-          {CASE_STUDIES.stats.map((stat, index) => (
+        {/* 選定基準 */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16">
+          {CASE_STUDIES.criteria.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-4 sm:p-8 text-center shadow-sm border border-gray-100"
+              className="bg-white rounded-2xl p-5 sm:p-6 text-center shadow-sm border border-gray-100 flex flex-col items-center gap-3"
             >
-              <p className="text-2xl sm:text-4xl md:text-5xl font-black text-navy-700 mb-1 sm:mb-2 leading-tight">
-                {stat.value}
+              <span className="text-3xl">{item.icon}</span>
+              <p className="text-gray-700 text-sm sm:text-base font-semibold leading-snug">
+                {item.label}
               </p>
-              <p className="text-gray-500 text-xs sm:text-sm">{stat.label}</p>
             </div>
           ))}
         </div>

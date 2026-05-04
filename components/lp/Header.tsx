@@ -73,7 +73,7 @@ export default function Header() {
             href="/ranking"
             className="bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs sm:text-sm py-2 px-4 sm:px-6 rounded-full transition-colors duration-200 shrink-0"
           >
-            ランキングを見る
+            失敗しないランキングを見る
           </Link>
 
           {/* ハンバーガーボタン（モバイルのみ） */}

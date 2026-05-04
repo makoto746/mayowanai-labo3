@@ -106,15 +106,34 @@ function HeroCard({ product }: { product: RankingProduct }) {
             今月 {product.monthlyPurchases} が購入
           </span>
         </div>
-        <a
-          href={product.amazonUrl}
-          target="_blank"
-          rel="noopener noreferrer sponsored"
-          className="flex items-center justify-center gap-2 w-full bg-amber-500 hover:bg-amber-600 active:bg-amber-700 text-white font-black py-4 rounded-xl transition-colors duration-150 text-base shadow-md shadow-amber-200"
-        >
-          <CartIcon />
-          Amazonで今すぐ確認する →
-        </a>
+        <div className="flex flex-col sm:flex-row gap-2">
+          <a
+            href={product.amazonUrl}
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            className="flex items-center justify-center gap-2 flex-1 bg-amber-500 hover:bg-amber-600 active:bg-amber-700 text-white font-black py-4 rounded-xl transition-colors duration-150 text-base shadow-md shadow-amber-200"
+          >
+            <CartIcon />
+            Amazonで見る →
+          </a>
+          {product.rakutenUrl && (
+            <a
+              href={product.rakutenUrl}
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              className="flex items-center justify-center gap-2 flex-1 bg-red-500 hover:bg-red-600 active:bg-red-700 text-white font-black py-4 rounded-xl transition-colors duration-150 text-base shadow-md shadow-red-200"
+            >
+              楽天で見る →
+            </a>
+          )}
+        </div>
+        {product.rakutenUrl && (
+          <p className="text-center text-xs text-gray-500 mt-2">
+            <span className="text-amber-600 font-bold">急ぎならAmazon</span>
+            <span className="mx-2">・</span>
+            <span className="text-red-600 font-bold">ポイント重視なら楽天</span>
+          </p>
+        )}
         <p className="text-center text-xs text-gray-400 mt-2">
           ※ Amazonアソシエイトリンクです
         </p>
@@ -217,15 +236,34 @@ function NormalCard({ product }: { product: RankingProduct }) {
           <span className="mx-1">・</span>
           <span className="text-amber-500 font-bold">今月 {product.monthlyPurchases} が購入</span>
         </div>
-        <a
-          href={product.amazonUrl}
-          target="_blank"
-          rel="noopener noreferrer sponsored"
-          className="flex items-center justify-center gap-2 w-full bg-amber-500 hover:bg-amber-600 active:bg-amber-700 text-white font-bold py-3.5 rounded-xl transition-colors duration-150 text-sm sm:text-base"
-        >
-          <CartIcon />
-          Amazonで今すぐ確認する →
-        </a>
+        <div className="flex flex-col sm:flex-row gap-2">
+          <a
+            href={product.amazonUrl}
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            className="flex items-center justify-center gap-2 flex-1 bg-amber-500 hover:bg-amber-600 active:bg-amber-700 text-white font-bold py-3.5 rounded-xl transition-colors duration-150 text-sm sm:text-base"
+          >
+            <CartIcon />
+            Amazonで見る →
+          </a>
+          {product.rakutenUrl && (
+            <a
+              href={product.rakutenUrl}
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              className="flex items-center justify-center gap-2 flex-1 bg-red-500 hover:bg-red-600 active:bg-red-700 text-white font-bold py-3.5 rounded-xl transition-colors duration-150 text-sm sm:text-base"
+            >
+              楽天で見る →
+            </a>
+          )}
+        </div>
+        {product.rakutenUrl && (
+          <p className="text-center text-xs text-gray-500 mt-1.5">
+            <span className="text-amber-600 font-bold">急ぎならAmazon</span>
+            <span className="mx-2">・</span>
+            <span className="text-red-600 font-bold">ポイント重視なら楽天</span>
+          </p>
+        )}
         <p className="text-center text-xs text-gray-400 mt-1.5">
           ※ Amazonアソシエイトリンクです
         </p>

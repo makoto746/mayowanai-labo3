@@ -13,11 +13,11 @@ export const SITE = {
 };
 
 export const HERO = {
-  headline: "「これで決まり！」が見つかる\nAmazon商品レビュー＆ランキング",
+  headline: "もう迷わない。\n結論から選べる買い物。",
   subheadline:
-    "忙しい毎日の中で「いい買い物」を増やしたい。\n専門家が実際に使って選んだ商品だけを、正直にレビューします。",
-  ctaPrimary: "人気ランキングを見る →",
-  ctaSecondary: "まずは無料で読む",
+    "忙しくて比較できない人のために、実際に使って「良かったものだけ」をわかりやすくまとめました。",
+  ctaPrimary: "もう迷わないランキングを見る",
+  ctaSecondary: "失敗しない選び方を読む",
   ctaPrimaryUrl: "/ranking",
   ctaSecondaryUrl: "#overview",
 };
@@ -28,28 +28,31 @@ export const PROBLEMS = {
     {
       icon: "😰",
       title: "商品が多すぎて選べない",
-      description: "レビュー数が多すぎて、どれが本当にいいのか分からない…",
+      description: "レビュー数が多すぎて、結局どれが本当にいいのか分からない…",
     },
     {
       icon: "⏰",
       title: "比較する時間がない",
-      description: "忙しくて、じっくりリサーチできない。気づいたら何も買えていない。",
+      description: "仕事・家事・育児で忙しくて、じっくり調べる時間がない…",
     },
     {
       icon: "😖",
       title: "買って後悔したくない",
-      description: "お金をムダにしたくない。失敗してガッカリしたくない。",
+      description: "安いと思って買ったのに、使いにくくて結局買い直したくない…",
     },
     {
       icon: "🤔",
       title: "口コミが信用できない",
-      description: "サクラレビューが混ざっていそうで不安。本当の評価が知りたい。",
+      description: "高評価なのに微妙だった経験がある。サクラレビューっぽくて不安…",
     },
   ],
   resolution: "そのお悩み、私たちが解決します！",
 };
 
 export const OVERVIEW = {
+  storyHeading: "安さだけで選んで、何度も失敗しました。",
+  storyBody:
+    "最初は、Amazonで評価が高いものや安いものをなんとなく選んでいました。\nでも実際に使ってみると、思ったより使いにくかったり、すぐに買い直したくなったり…。\nだからこのサイトでは、価格だけでなく、使いやすさ・口コミ・コスパ・後悔しにくさまで見て、「結局どれがいいの？」に答える形で紹介しています。",
   title: "迷わない買い物ラボとは？",
   description:
     "生活雑貨・家電・美容・食品など、あらゆるカテゴリのAmazon商品を数千件のレビューとデータで徹底リサーチ。コスパ・品質・使いやすさを多角的に比較して、本当に価値ある商品だけをランキング＆レビューで紹介するメディアです。",
@@ -95,6 +98,8 @@ export type RankingProduct = {
   targetUser: string;       // 「こんな人におすすめ」
   monthlyPurchases: string; // 「今月X人が購入」の数字部分
   amazonUrl: string;
+  rakutenUrl?: string;
+  rakutenPriceRange?: string;
   badge?: string;
   saleLabel?: string;       // 「⚡ セール中」など。不要なら削除でOK
 };
@@ -130,6 +135,8 @@ export const RANKING_PRODUCTS: RankingProduct[] = [
     targetUser: "共働きで掃除の時間が取れない方",
     monthlyPurchases: "1,247人",
     amazonUrl: "#",
+    rakutenUrl: "#",
+    rakutenPriceRange: "¥47,000〜62,000",
     badge: "編集部イチオシ",
     saleLabel: "🔥 今週急上昇",
   },
@@ -696,20 +703,20 @@ export const FEATURES = {
     },
     {
       number: "03",
-      title: "忙しい人向けに解説",
+      title: "\"結局どれ？\"に答えます",
       description:
-        "「結局どれがいいの？」に答える結論ファーストの構成。長い文章を読まなくても、すぐに判断できます。",
+        "長い比較記事を読まなくても、あなたに合う商品がすぐ判断できるように、結論ファーストで紹介します。",
       highlight: "3分で買い物上手になれる",
     },
   ],
 };
 
 export const CASE_STUDIES = {
-  title: "みんなが使っています",
-  stats: [
-    { value: "500点以上", label: "紹介商品数" },
-    { value: "12万人", label: "月間読者数" },
-    { value: "96%", label: "「参考になった」率" },
+  title: "選ぶ基準をわかりやすく",
+  criteria: [
+    { icon: "📦", label: "日用品・家電・美容・食品など幅広く調査" },
+    { icon: "🔍", label: "口コミ、価格、使いやすさを比較" },
+    { icon: "✅", label: "買って後悔しにくい商品を厳選" },
   ],
   testimonials: [
     {
@@ -786,12 +793,12 @@ export const FAQS = {
 };
 
 export const CTA = {
-  title: "さっそく読んでみませんか？",
-  subtitle: "無料・登録不要でランキングをチェックできます",
-  primaryButton: "人気ランキングを見る →",
+  title: "もう、買ってから後悔しない。",
+  subtitle: "ランキングと比較レビューを見て、自分に合う商品をサクッと選べます。",
+  primaryButton: "失敗しないランキングを見る",
   primaryUrl: "/ranking",
-  lineButton: "LINEで最新情報を受け取る",
-  lineSubtext: "LINE登録でセール情報を先行配信",
+  lineButton: "LINEでお得情報を受け取る",
+  lineSubtext: "セール情報や買い時をLINEで受け取る",
 };
 
 export const FOOTER = {

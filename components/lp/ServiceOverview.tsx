@@ -1,9 +1,23 @@
 import { OVERVIEW } from "@/constants";
 
 export default function ServiceOverview() {
+  const storyLines = OVERVIEW.storyBody.split("\n");
+
   return (
     <section id="overview" className="bg-white py-14 px-4 sm:py-20 md:py-24">
       <div className="max-w-4xl mx-auto">
+        {/* ストーリー */}
+        <div className="bg-amber-50 border-l-4 border-amber-400 rounded-2xl p-6 sm:p-8 mb-12 sm:mb-16 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl font-bold text-gray-800 mb-4">
+            {OVERVIEW.storyHeading}
+          </p>
+          <div className="text-gray-600 text-sm sm:text-base leading-relaxed space-y-3">
+            {storyLines.map((line, i) => (
+              <p key={i}>{line}</p>
+            ))}
+          </div>
+        </div>
+
         {/* タイトル */}
         <div className="text-center mb-10 sm:mb-12">
           <p className="text-amber-500 font-bold text-xs sm:text-sm tracking-widest mb-2 uppercase">
