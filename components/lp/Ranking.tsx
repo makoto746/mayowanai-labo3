@@ -7,11 +7,10 @@ import RankingCard from "./RankingCard";
 export default function Ranking() {
   const [activeCategory, setActiveCategory] = useState("すべて");
 
-  const withImages = RANKING_PRODUCTS.filter((p) => p.image);
   const filtered =
     activeCategory === "すべて"
-      ? withImages
-      : withImages.filter((p) => p.category === activeCategory);
+      ? RANKING_PRODUCTS
+      : RANKING_PRODUCTS.filter((p) => p.category === activeCategory);
 
   return (
     <section id="ranking" className="bg-white py-14 px-4 sm:py-20 md:py-24">

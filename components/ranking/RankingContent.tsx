@@ -15,13 +15,12 @@ export default function RankingContent() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const withImages = RANKING_PRODUCTS.filter((p) => p.image);
   const filtered =
     activeCategory === "すべて"
-      ? withImages
-      : withImages.filter((p) => p.category === activeCategory);
+      ? RANKING_PRODUCTS
+      : RANKING_PRODUCTS.filter((p) => p.category === activeCategory);
 
-  const topProduct = RANKING_PRODUCTS.find((p) => p.rank === 1 && p.image);
+  const topProduct = RANKING_PRODUCTS.find((p) => p.rank === 1);
 
   return (
     <>
