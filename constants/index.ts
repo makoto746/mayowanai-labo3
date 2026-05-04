@@ -734,6 +734,39 @@ export const CASE_STUDIES = {
   ],
 };
 
+export const SHOP_COMPARISON = {
+  label: "Amazon vs 楽天",
+  title: "Amazonと楽天、結局どっちがお得？",
+  description:
+    "急ぎで欲しいならAmazon。ポイントを重視するなら楽天。商品によって正解は変わります。迷わない買い物ラボでは、価格だけでなく、配送スピード・ポイント還元・買いやすさまで比較して紹介します。",
+  cards: [
+    {
+      icon: "🚀",
+      accent: "amazon",
+      title: "急ぎならAmazon",
+      body: "すぐ欲しい人、配送の早さを重視する人におすすめ。",
+      button: "Amazonで見る",
+      href: "/ranking",
+    },
+    {
+      icon: "🎁",
+      accent: "rakuten",
+      title: "ポイント重視なら楽天",
+      body: "買い回りやポイント還元を活用したい人におすすめ。",
+      button: "楽天で見る",
+      href: "/ranking",
+    },
+    {
+      icon: "⚖️",
+      accent: "compare",
+      title: "迷ったら比較レビュー",
+      body: "価格・口コミ・使いやすさを見て、どちらで買うべきか結論から紹介します。",
+      button: "比較ランキングを見る",
+      href: "/ranking",
+    },
+  ],
+} as const;
+
 export const FLOW = {
   title: "ご利用の流れ",
   subtitle: "4ステップで、買い物の迷いがなくなります",
