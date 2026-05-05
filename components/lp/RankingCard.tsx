@@ -29,7 +29,7 @@ function ProductImage({
     <img
       src={src}
       alt={isPlaceholder ? "商品画像準備中" : product.name}
-      className={`w-full h-full ${isPlaceholder ? "object-contain p-4 opacity-40" : "object-cover"} ${className ?? ""}`}
+      className={`w-full h-full object-contain ${isPlaceholder ? "p-4 opacity-40" : ""}`}
     />
   );
 }
@@ -52,7 +52,7 @@ function HeroCard({ product }: { product: RankingProduct }) {
           target="_blank"
           rel="nofollow sponsored noopener"
           aria-label={`${product.name}をAmazonで確認する`}
-          className={`${product.image ? "bg-white" : product.categoryBg} flex items-center justify-center h-52 md:h-auto md:w-52 flex-shrink-0 overflow-hidden`}
+          className="w-full md:w-[260px] h-[220px] md:h-[260px] bg-white flex items-center justify-center overflow-hidden flex-shrink-0"
         >
           <ProductImage product={product} />
         </a>
@@ -205,9 +205,9 @@ function NormalCard({ product }: { product: RankingProduct }) {
           target="_blank"
           rel="nofollow sponsored noopener"
           aria-label={`${product.name}をAmazonで確認する`}
-          className={`${product.image ? "bg-white" : product.categoryBg} flex items-center justify-center h-40 sm:h-auto sm:w-36 flex-shrink-0 overflow-hidden`}
+          className="w-full md:w-[260px] h-[220px] md:h-[260px] bg-white flex items-center justify-center overflow-hidden flex-shrink-0"
         >
-          <ProductImage product={product} className="sm:w-36 sm:min-h-[170px]" />
+          <ProductImage product={product} />
         </a>
 
         {/* 情報エリア */}
